@@ -116,13 +116,13 @@ ___
 SQL query
 ```sql
 SELECT
-    product_name,
-    company_name,
-    country_name,
-    industry_group,
-    year,
-    weight_kg,
-    carbon_footprint_pcf
+    product_name
+    , company_name
+    , country_name
+    , industry_group
+    , year
+    , weight_kg
+    , carbon_footprint_pcf
 FROM product_emissions pe
 JOIN companies c ON c.id = pe.company_id
 JOIN industry_groups ig ON ig.id = pe.industry_group_id
