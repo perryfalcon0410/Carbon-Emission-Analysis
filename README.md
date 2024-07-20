@@ -109,9 +109,9 @@ First 10 rows of table `countries`
 |9|France|
 |10|Germany|
 ___
-** Question to research
+## Question to research
 
-*** Which products contribute the most to carbon emissions? What are the industry groups of these products?
+### Which products contribute the most to carbon emissions? What are the industry groups of these products?
 
 SQL query
 ```sql
