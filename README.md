@@ -134,6 +134,39 @@ Result
 
 |product_name|company_name|country_name|industry_group|year|weight_kg|carbon_footprint_pcf|
 |------------|------------|------------|--------------|----|---------|--------------------|
-|Wind Turbine G128 5 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|600000.0|3718044|
-|Wind Turbine G132 5 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|600000.0|3276187|
-|Wind Turbine G114 2 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|400000.0|1532608|
+|Wind Turbine G128 5 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|600,000|3,718,044|
+|Wind Turbine G132 5 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|600,000|3,276,187|
+|Wind Turbine G114 2 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|400,000|1,532,608|
+
+___
+### What are the industries with the highest contribution to carbon emissions?
+
+SQL query
+```sql
+SELECT 
+    industry_group, 
+    SUM(carbon_footprint_pcf) AS total 
+FROM (
+    SELECT DISTINCT 
+        industry_group_id, 
+        product_name, 
+        company_id, 
+        country_id, 
+        year, 
+        weight_kg, 
+        carbon_footprint_pcf
+    FROM product_emissions
+) pe
+join industry_groups ig on ig.id = pe.industry_group_id
+GROUP BY industry_group_id
+order by total DESC
+limit 3
+;
+```
+Result
+
+|industry_group|total|
+|--------------|-----|
+|Electrical Equipment and Machinery|9,801,558|
+|Automobiles & Components|2,582,264|
+|Materials|430199|
