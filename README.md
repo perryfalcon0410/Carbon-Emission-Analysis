@@ -117,9 +117,9 @@ SQL query
 ```sql
 SELECT
     product_name
-    , company_name
+    , REPLACE(company_name,"\"","") as company_name
     , country_name
-    , industry_group
+    , REPLACE (industry_group,"\"","") as industry_group
     , year
     , weight_kg
     , carbon_footprint_pcf
@@ -144,7 +144,7 @@ ___
 SQL query
 ```sql
 SELECT 
-    industry_group, 
+    REPLACE (industry_group,"\"","") as industry_group, 
     SUM(carbon_footprint_pcf) AS total_pcf
 FROM (
     SELECT DISTINCT 
@@ -176,7 +176,7 @@ ___
 SQL query
 ```sql
 SELECT 
-    company_name, 
+    REPLACE(company_name,"\"","") as company_name, 
     SUM(carbon_footprint_pcf) AS total_pcf
 FROM (
     SELECT DISTINCT 
@@ -198,7 +198,7 @@ Result
 
 |company_name|total_pcf|
 |------------|-----|
-|"Gamesa Corporación Tecnológica, S.A."|9,778,464|
+|Gamesa Corporación Tecnológica, S.A.|9,778,464|
 |Daimler AG|1,594,300|
 |Volkswagen AG|655,960|
 ___
@@ -265,3 +265,30 @@ Result
 |2017|228,522|
 
 The data shows a significant spike in carbon footprint in 2015, likely due to reporting changes or anomalies, followed by a sharp decline in subsequent years. This suggests that the 2015 value may be an outlier or anomaly, and the overall trend indicates a reduction in carbon footprint in the following years.
+___
+### Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
+SQL query
+```sql
+SELECT 
+    year,
+    REPLACE (industry_group,"\"","") as industry_group,
+    SUM(carbon_footprint_pcf) AS total_pcf
+FROM (
+    SELECT DISTINCT 
+        industry_group_id, 
+        product_name, 
+        company_id, 
+        country_id, 
+        year, 
+        weight_kg, 
+        carbon_footprint_pcf
+    FROM product_emissions
+) pe
+join industry_groups ig  on ig.id = pe.industry_group_id
+GROUP BY year, industry_group 
+order by industry_group, year
+-- limit 3;
+
+```
+Result
+
