@@ -377,7 +377,7 @@ Result
 |2014|Telecommunication Services|183|
 |2015|Telecommunication Services|183|
 
-### Insights on Notable Decreases in Carbon Footprints
+We draws some conclusion about this question
 
 1. **Capital Goods**
    - **Peak**: 93,699 pcf in 2014
@@ -398,3 +398,12 @@ Result
    - **Peak**: 101,153 pcf in 2014
    - **Drop**: To 1,280 pcf in 2016, then increased to 21,857 pcf in 2017
    - **Trend**: Major reduction followed by a partial rebound
+
+___
+## Insight and patterns
+During the exploration, the following facts and patterns were identified:
+- The product produces the highest level of carbon emissions typically in heavy industry and comes from Machinery, Automobiles & Components, and Materials.
+- Car models that are leading in carbon emissions during production: **Land Cruiser Prado, Mercedes-Benz GLA, Mercedes-Benz S-Class**
+- Most of the countries leading the carbon emissions are from Europe, indicating that, on average, air equality in euro is lower than in other continents.
+- According to the data, there was a significant spike in carbon emissions levels in 2015.
+- There was a downtrend in CO2 emissions after 2015.
