@@ -201,3 +201,35 @@ Result
 |"Gamesa Corporación Tecnológica, S.A."|9,778,464|
 |Daimler AG|1,594,300|
 |Volkswagen AG|655,960|
+___
+### What are the countries with the highest contribution to carbon emissions?
+SQL query
+
+```sql
+SELECT 
+    country_name, 
+    SUM(carbon_footprint_pcf) AS total_pcf
+FROM (
+    SELECT DISTINCT 
+        industry_group_id, 
+        product_name, 
+        company_id, 
+        country_id, 
+        year, 
+        weight_kg, 
+        carbon_footprint_pcf
+    FROM product_emissions
+) pe
+join countries c  on c.id = pe.country_id
+GROUP BY country_id
+order by total_pcf DESC
+limit 3;
+```
+
+Result
+
+|country_name|total_pcf|
+|------------|---------|
+|Spain|9,786,127|
+|Germany|2,251,225|
+|Japan|519,339|
