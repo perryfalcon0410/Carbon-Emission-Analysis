@@ -1,8 +1,7 @@
 # Carbon Emission Analysis
 
 ## What is the project about?
-
-![Picture](https://lms.swisscoding.edu.vn/pluginfile.php/9292/mod_label/intro/cover.jpg)
+![cover](https://github.com/user-attachments/assets/2fc9d703-c868-443d-888e-ea9a427f18fe)
 
 Photo by Chris LeBoutillier (unsplash.com)
 This report aims to analyze carbon emissions to examine the carbon footprint across various industries. We aim to identify sectors with the highest levels of emissions by analyzing them across countries and years, as well as to uncover trends.
