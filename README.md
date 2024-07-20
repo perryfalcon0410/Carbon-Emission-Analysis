@@ -145,7 +145,7 @@ SQL query
 ```sql
 SELECT 
     industry_group, 
-    SUM(carbon_footprint_pcf) AS total 
+    SUM(carbon_footprint_pcf) AS total_pcf
 FROM (
     SELECT DISTINCT 
         industry_group_id, 
@@ -160,13 +160,44 @@ FROM (
 join industry_groups ig on ig.id = pe.industry_group_id
 GROUP BY industry_group_id
 order by total DESC
-limit 3
-;
+limit 3;
 ```
 Result
 
-|industry_group|total|
+|industry_group|total_pcf|
 |--------------|-----|
 |Electrical Equipment and Machinery|9,801,558|
 |Automobiles & Components|2,582,264|
 |Materials|430,199|
+
+___
+### What are the companies with the highest contribution to carbon emissions?
+
+SQL query
+```sql
+SELECT 
+    company_name, 
+    SUM(carbon_footprint_pcf) AS total_pcf
+FROM (
+    SELECT DISTINCT 
+        industry_group_id, 
+        product_name, 
+        company_id, 
+        country_id, 
+        year, 
+        weight_kg, 
+        carbon_footprint_pcf
+    FROM product_emissions
+) pe
+join companies c  on c.id = pe.company_id
+GROUP BY company_id
+order by total DESC
+limit 3;
+```
+Result
+
+|company_name|total_pcf|
+|------------|-----|
+|"Gamesa Corporación Tecnológica, S.A."|9,778,464|
+|Daimler AG|1,594,300|
+|Volkswagen AG|655,960|
