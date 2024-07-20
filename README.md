@@ -114,22 +114,22 @@ ___
 *** Which products contribute the most to carbon emissions? What are the industry groups of these products?
 
 SQL query
-
+    ```SQL
     select
-    product_name
-    , company_name
-    , country_name
-    , industry_group
-    , year
-    , weight_kg
-    , carbon_footprint_pcf
+        product_name
+        , company_name
+        , country_name
+        , industry_group
+        , year
+        , weight_kg
+        , carbon_footprint_pcf
     from product_emissions pe
     join companies c on c.id =pe.company_id 
     join industry_groups ig on ig.id=pe.industry_group_id 
     join countries c2 on c2.id=pe.country_id 
     order by carbon_footprint_pcf desc
     limit 3;
-
+    ```
 Result
 
 |product_name|company_name|country_name|industry_group|year|weight_kg|carbon_footprint_pcf|
