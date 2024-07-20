@@ -117,9 +117,9 @@ SQL query
 ```sql
 SELECT
     product_name
-    , REPLACE(company_name,"\"","") as company_name
+    , REPLACE(company_name,'\"','') as company_name
     , country_name
-    , REPLACE (industry_group,"\"","") as industry_group
+    , REPLACE (industry_group,'\"','') as industry_group
     , year
     , weight_kg
     , carbon_footprint_pcf
@@ -138,13 +138,15 @@ Result
 |Wind Turbine G132 5 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|600,000|3,276,187|
 |Wind Turbine G114 2 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|400,000|1,532,608|
 
+
+The products contributing the most to carbon emissions are wind turbines from Gamesa Corporación Tecnológica, S.A., all from the Electrical Equipment and Machinery industry group.
 ___
 ### What are the industries with the highest contribution to carbon emissions?
 
 SQL query
 ```sql
 SELECT 
-    REPLACE (industry_group,"\"","") as industry_group, 
+    REPLACE (industry_group,'\"','') as industry_group, 
     SUM(carbon_footprint_pcf) AS total_pcf
 FROM (
     SELECT DISTINCT 
@@ -170,13 +172,14 @@ Result
 |Automobiles & Components|2,582,264|
 |Materials|430,199|
 
+The Electrical Equipment and Machinery industry is the largest contributor to carbon emissions, accounting for *9,801,558 pcf*, significantly surpassing Automobiles & Components at *2,582,264 pcf*, and Materials at *430,199 pcf*. This indicates that the Electrical Equipment and Machinery sector substantially impacts overall carbon emissions among the industries analyzed.
 ___
 ### What are the companies with the highest contribution to carbon emissions?
 
 SQL query
 ```sql
 SELECT 
-    REPLACE(company_name,"\"","") as company_name, 
+    REPLACE(company_name,'\"','') as company_name, 
     SUM(carbon_footprint_pcf) AS total_pcf
 FROM (
     SELECT DISTINCT 
@@ -201,6 +204,8 @@ Result
 |Gamesa Corporación Tecnológica, S.A.|9,778,464|
 |Daimler AG|1,594,300|
 |Volkswagen AG|655,960|
+
+The company with the highest contribution to carbon emissions is Gamesa Corporación Tecnológica, S.A., with a total of *9,778,464 pcf*, followed by Daimler AG with *1,594,300 pcf*, and Volkswagen AG with *655,960 pcf*. This highlights that Gamesa Corporación Tecnológica, S.A. has the largest impact on carbon emissions compared to the other companies listed.
 ___
 ### What are the countries with the highest contribution to carbon emissions?
 SQL query
