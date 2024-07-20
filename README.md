@@ -271,7 +271,7 @@ SQL query
 ```sql
 SELECT 
     year,
-    REPLACE (industry_group,"\"","") as industry_group,
+    REPLACE(industry_group,"\"","") as industry_group,
     SUM(carbon_footprint_pcf) AS total_pcf
 FROM (
     SELECT DISTINCT 
@@ -287,7 +287,6 @@ FROM (
 join industry_groups ig  on ig.id = pe.industry_group_id
 GROUP BY year, industry_group 
 order by industry_group, year
--- limit 3;
 
 ```
 Result
