@@ -128,15 +128,23 @@ JOIN companies c ON c.id = pe.company_id
 JOIN industry_groups ig ON ig.id = pe.industry_group_id
 JOIN countries c2 ON c2.id = pe.country_id
 ORDER BY carbon_footprint_pcf DESC
-LIMIT 3;
+LIMIT 10;
 ```
 Result
 
 |product_name|company_name|country_name|industry_group|year|weight_kg|carbon_footprint_pcf|
 |------------|------------|------------|--------------|----|---------|--------------------|
-|Wind Turbine G128 5 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|600,000|3,718,044|
-|Wind Turbine G132 5 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|600,000|3,276,187|
-|Wind Turbine G114 2 Megawats|"Gamesa Corporación Tecnológica, S.A."|Spain|Electrical Equipment and Machinery|2015|400,000|1,532,608|
+|Wind Turbine G128 5 Megawats|Gamesa Corporación Tecnológica, S.A.|Spain|Electrical Equipment and Machinery|2015|600000.00|3,718,044|
+|Wind Turbine G132 5 Megawats|Gamesa Corporación Tecnológica, S.A.|Spain|Electrical Equipment and Machinery|2015|600000.00|3,276,187|
+|Wind Turbine G114 2 Megawats|Gamesa Corporación Tecnológica, S.A.|Spain|Electrical Equipment and Machinery|2015|400000.00|1,532,608|
+|Wind Turbine G90 2 Megawats|Gamesa Corporación Tecnológica, S.A.|Spain|Electrical Equipment and Machinery|2015|361000.00|1,251,625|
+|Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV def unit.|Hino Motors, Ltd.|Japan|Automobiles & Components|2016|2272.33|191,687|
+|Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall|Arcelor Mittal|Luxembourg|Materials|2013|140000.00|167,000|
+|TCDE|Mitsubishi Gas Chemical Company, Inc.|Japan|Materials|2017|12000.00|99,075|
+|TCDE|Mitsubishi Gas Chemical Company, Inc.|Japan|Materials|2017|12000.00|99,075|
+|Mercedes-Benz GLE (GLE 500 4MATIC)|Daimler AG|Germany|Automobiles & Components|2016|3500.0|91,000|
+|Electric Motor|Weg S/A|Brazil|Capital Goods|2014|90.00|87,589|
+
 
 
 The products contributing the most to carbon emissions are wind turbines from Gamesa Corporación Tecnológica, S.A., all from the Electrical Equipment and Machinery industry group.
