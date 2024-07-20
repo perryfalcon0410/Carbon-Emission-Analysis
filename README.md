@@ -233,3 +233,35 @@ Result
 |Spain|9,786,127|
 |Germany|2,251,225|
 |Japan|519,339|
+
+___
+What is the trend of carbon footprints (PCFs) over the years?
+SQL query
+```sql
+SELECT 
+    year, 
+    SUM(carbon_footprint_pcf) AS total_pcf
+FROM (
+    SELECT DISTINCT 
+        industry_group_id, 
+        product_name, 
+        company_id, 
+        country_id, 
+        year, 
+        weight_kg, 
+        carbon_footprint_pcf
+    FROM product_emissions
+) pe
+GROUP BY year;
+```
+Result
+
+|year|total_pcf|
+|----|---------|
+|2013|496,076|
+|2014|548,229|
+|2015|10,810,407|
+|2016|1,612,755|
+|2017|228,522|
+
+The data shows a significant spike in carbon footprint in 2015, likely due to reporting changes or anomalies, followed by a sharp decline in subsequent years. This suggests that the 2015 value may be an outlier or anomaly, and the overall trend indicates a reduction in carbon footprint in the following years.
