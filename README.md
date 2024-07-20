@@ -21,17 +21,18 @@ ___
 ## Tables' column description
 ### Table `product_emissions`
 
-- **id**: Identifier for each product emission record.
-- **company_id**: Identifier for the company associated with the product.
-- **country_id**: Identifier for the country where the product is being produced.
-- **industry_group_id**: Identifier for the industry group to which the product belongs.
-- **year**: The year in which the emissions data was recorded.
-- **product_name**: The name of the product associated with the emissions data.
-- **weight_kg**: The weight of the product in kilograms.
-- **carbon_footprint_pcf**: The carbon footprint of the product, measured in CO2 equivalent.
-- **upstream_percent_total_pcf**: The percentage of the total carbon footprint attributed to upstream activities.
-- **operations_percent_total_pcf**: The percentage of the total carbon footprint attributed to operations.
-- **downstream_percent_total_pcf**: The percentage of the total carbon footprint attributed to downstream activities.
+- **`id`**: Identifier for each product emission record.
+- **`company_id`**: Identifier for the company associated with the product.
+- **`country_id`**: Identifier for the country where the product is being produced.
+- **`industry_group_id`**: Identifier for the industry group to which the product belongs.
+- **`year`**: The year in which the emissions data was recorded.
+- **`product_name`**: The name of the product associated with the emissions data.
+- **`weight_kg`**: The weight of the product in kilograms.
+- **`carbon_footprint_pcf`**: The carbon footprint of the product, measured in CO2 equivalent.
+- **`upstream_percent_total_pcf`**: The percentage of the total carbon footprint attributed to upstream activities.
+- **`operations_percent_total_pcf`**: The percentage of the total carbon footprint attributed to operations.
+- **`downstream_percent_total_pcf`**: The percentage of the total carbon footprint attributed to downstream activities.
+
 
 ### Table `industry_groups`
 
