@@ -169,4 +169,4 @@ Result
 |--------------|-----|
 |Electrical Equipment and Machinery|9,801,558|
 |Automobiles & Components|2,582,264|
-|Materials|430199|
+|Materials|430,199|
