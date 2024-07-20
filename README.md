@@ -33,7 +33,7 @@ ___
 - **`operations_percent_total_pcf`**: The percentage of the total carbon footprint attributed to operations.
 - **`downstream_percent_total_pcf`**: The percentage of the total carbon footprint attributed to downstream activities.
 
-First 10 lines of table `product_emissions`
+First 10 records of table `product_emissions`
 
 |id|company_id|country_id|industry_group_id|year|product_name|weight_kg|carbon_footprint_pcf|upstream_percent_total_pcf|operations_percent_total_pcf|downstream_percent_total_pcf|
 |--|----------|----------|-----------------|----|------------|---------|--------------------|--------------------------|----------------------------|----------------------------|
@@ -54,7 +54,7 @@ First 10 lines of table `product_emissions`
 - **`id`**: Unique identifier for each industry group.
 - **`industry_group`**: The name of the industry group, categorizing businesses within similar sectors based on their products or services offered.
 
-First 10 lines of table `industry_groups`
+First 10 rows of table `industry_groups`
 
 |id|industry_group|
 |--|--------------|
@@ -74,7 +74,7 @@ First 10 lines of table `industry_groups`
 - **`id`**: Unique identifier for each company.
 - **`company_name`**: The name of the company, identifying the specific organization within the dataset.
 
-First 10 lines of table `companies`
+First 10 rows of table `companies`
 
 |id|company_name|
 |--|------------|
@@ -94,7 +94,7 @@ First 10 lines of table `companies`
 - **`id`**: Unique identifier for each country.
 - **`country_name`**: The name of the country.
 
-First 10 lines of table `countries`
+First 10 rows of table `countries`
 
 |id|country_name|
 |--|------------|
