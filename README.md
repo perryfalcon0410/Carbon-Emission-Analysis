@@ -36,15 +36,16 @@ ___
 
 ### Table `industry_groups`
 
-- **id**: Unique identifier for each industry group.
-- **industry_group**: The name of the industry group, categorizing businesses within similar sectors based on their products or services offered.
+- **`id`**: Unique identifier for each industry group.
+- **`industry_group`**: The name of the industry group, categorizing businesses within similar sectors based on their products or services offered.
+
 
 ### Table `companies`
 
-- **id**: Unique identifier for each company.
-- **company_name**: The name of the company, identifying the specific organization within the dataset.
+- **`id`**: Unique identifier for each company.
+- **`company_name`**: The name of the company, identifying the specific organization within the dataset.
 
 ### Table `countries`
 
-- **id**: Unique identifier for each country.
-- **country_name**: The name of the country.
+- **`id`**: Unique identifier for each country.
+- **`country_name`**: The name of the country.
